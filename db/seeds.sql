@@ -1,4 +1,4 @@
-INSERT INTO burgers (burger_name, devoured)
-VALUES ('Top Burger', FALSE),
-        ('Monster', FALSE),
-        ('Patty Melt', FALSE)
+INSERT INTO burgers (burger_name)
+VALUES ('Top Burger'),
+        ('Monster'),
+        ('Patty Melt')

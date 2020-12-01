@@ -1,4 +1,3 @@
-const mysql = require("mysql");
 const connection = require('./connection.js');
 
 const orm = {
@@ -16,7 +15,7 @@ const orm = {
             cb(res);
         });
     },
-    updateOne: function(bool, cd) {
+    updateOne: function(bool, cb) {
         var queryString = "UPDATE burgers SET devoured = true WHERE id = ?";
         connection.query(queryString, [bool], function(err, res) {
             if(err) throw err;
@@ -26,3 +25,6 @@ const orm = {
 }
 
 module.exports = orm;
+
+// Reminder note for myself when looking back.
+//Considering we only have one table, with only one value that is entered by the user(burger_name), much of the boiler plate that we can gather from the class data is unnecessary. The boolean value, devoured, is automatically set to false as we are going to input it into the system as a burger that "will be devoured." Therefore, it has not been eaten, and is set to false. It will only need to be updated once it has been devoured. The delete function has been left out as well, because one cannot "undevour" an item. 
