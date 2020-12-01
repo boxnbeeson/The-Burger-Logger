@@ -12,15 +12,17 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/burgers", function(req,res) {
-    var burgerName = req.body.burger_name;
-    burger.insertOne(burgerName, function(data) {
+    const burgerName = req.body.burger_name;
+    const devoured = req.body.devoured;
+    burger.insertOne(burgerName, devoured, function(data) {
         res.json({ id: data.insertId });
     });
 });
 
 router.put("/api/burgers/:id", function(req,res) {
+    const devoured = req.body.devoured;
     const condition = req.params.id;
-    burger.updateOne(condition, function(data) {
+    burger.updateOne(devoured, condition, function(data) {
         if (data.changedRows == 0) {
             return res.status(404).end();
           } else {
