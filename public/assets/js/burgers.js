@@ -1,9 +1,9 @@
 $(function() {
-    $(".devourBtn").on("click", function(event) {
-      var id = $(this).data("id");
-      var valDevoured = $(this).data("devour");
+    $(".devourBtn").on("click", function (event) {
+      const id = $(this).data("id");
+      const valDevoured = $(this).data("devour");
   
-      var newValDevoured = {
+      const newValDevoured = {
         devoured: valDevoured
       };
   
@@ -11,7 +11,8 @@ $(function() {
         type: "PUT",
         data: newValDevoured
       }).then(
-        function() {
+        function () {
+          console.log("changed devoured to", newValDevoured);
           location.reload();
         }
       );
