@@ -1,4 +1,4 @@
-# The Burger Logger
+# The Burger Logger (DISCONTINUED PROJECT)
   "Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat."
   <br>
   https://mysterious-coast-61957.herokuapp.com/
